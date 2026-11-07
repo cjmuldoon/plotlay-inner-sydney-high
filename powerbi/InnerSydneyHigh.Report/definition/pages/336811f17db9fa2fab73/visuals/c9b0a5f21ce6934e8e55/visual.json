@@ -1,0 +1,172 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "c9b0a5f21ce6934e8e55",
+  "position": {
+    "x": 40,
+    "y": 120,
+    "z": 1,
+    "height": 420,
+    "width": 1100,
+    "tabOrder": 1
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Buildings"
+                    }
+                  },
+                  "Property": "key"
+                }
+              },
+              "queryRef": "Buildings.key",
+              "nativeQueryRef": "key"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Buildings"
+                    }
+                  },
+                  "Property": "name"
+                }
+              },
+              "queryRef": "Buildings.name",
+              "nativeQueryRef": "name"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Buildings"
+                    }
+                  },
+                  "Property": "storeys"
+                }
+              },
+              "queryRef": "Buildings.storeys",
+              "nativeQueryRef": "storeys"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Buildings"
+                    }
+                  },
+                  "Property": "footprint_m2"
+                }
+              },
+              "queryRef": "Buildings.footprint_m2",
+              "nativeQueryRef": "footprint_m2"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Buildings"
+                    }
+                  },
+                  "Property": "floor_m2_est"
+                }
+              },
+              "queryRef": "Buildings.floor_m2_est",
+              "nativeQueryRef": "floor_m2_est"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Buildings"
+                    }
+                  },
+                  "Property": "Floor share"
+                }
+              },
+              "queryRef": "Buildings.Floor share",
+              "nativeQueryRef": "Floor share"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Buildings"
+                    }
+                  },
+                  "Property": "in_use_from"
+                }
+              },
+              "queryRef": "Buildings.in_use_from",
+              "nativeQueryRef": "in_use_from"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Buildings"
+                    }
+                  },
+                  "Property": "height_m"
+                }
+              },
+              "queryRef": "Buildings.height_m",
+              "nativeQueryRef": "height_m"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Buildings"
+                    }
+                  },
+                  "Property": "outline_from"
+                }
+              },
+              "queryRef": "Buildings.outline_from",
+              "nativeQueryRef": "outline_from"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true,
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Each building'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

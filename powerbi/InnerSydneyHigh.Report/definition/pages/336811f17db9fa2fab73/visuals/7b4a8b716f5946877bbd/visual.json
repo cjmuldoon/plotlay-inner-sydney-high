@@ -1,0 +1,78 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "7b4a8b716f5946877bbd",
+  "position": {
+    "x": 1180,
+    "y": 460,
+    "z": 1,
+    "height": 550,
+    "width": 700,
+    "tabOrder": 1
+  },
+  "visual": {
+    "visualType": "clusteredBarChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ApprovedFloorAreas"
+                    }
+                  },
+                  "Property": "component"
+                }
+              },
+              "queryRef": "ApprovedFloorAreas.component",
+              "nativeQueryRef": "component"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ApprovedFloorAreas"
+                    }
+                  },
+                  "Property": "Approved m2"
+                }
+              },
+              "queryRef": "ApprovedFloorAreas.Approved m2",
+              "nativeQueryRef": "Approved m2"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true,
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Approved floor areas, SSD 7610 GFA schedule (m²)'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

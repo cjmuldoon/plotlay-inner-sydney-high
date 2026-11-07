@@ -1,0 +1,26 @@
+table Years
+	lineageTag: e4a00407-f4e1-4849-a66f-076123f38494
+
+	column year
+		dataType: int64
+		formatString: 0
+		lineageTag: e98df40a-db1f-a971-feee-c5350d6c58e6
+		summarizeBy: none
+		sourceColumn: year
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Years = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(GetFile("site/enrolments.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Skipped = Table.Skip(Source, 0),
+				    Promoted = Table.PromoteHeaders(Skipped, [PromoteAllScalars = true]),
+				    Kept = Table.SelectColumns(Promoted, {"year"}),
+				    Typed = Table.TransformColumnTypes(Kept, {{"year", Int64.Type}}, "en-AU"),
+				    Distinct = Table.Distinct(Typed)
+				in
+				    Distinct
+
+	annotation PBI_ResultType = Table

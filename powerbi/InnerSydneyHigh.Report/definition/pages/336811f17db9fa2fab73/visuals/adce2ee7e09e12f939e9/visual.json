@@ -1,0 +1,49 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "adce2ee7e09e12f939e9",
+  "position": {
+    "x": 40,
+    "y": 24,
+    "z": 0,
+    "height": 80,
+    "width": 1840,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "SIX SHAPES, ESTIMATED FLOOR SPACE, AND THE APPROVED FIGURES",
+                    "textStyle": {
+                      "fontSize": "24pt",
+                      "color": "#163c6e",
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Each building: footprint times storeys. The approved gross floor area (SSD 7610) leaves out stairs, lifts, plant and open areas, so the estimate is larger.",
+                    "textStyle": {
+                      "fontSize": "11pt",
+                      "color": "#5b6573"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

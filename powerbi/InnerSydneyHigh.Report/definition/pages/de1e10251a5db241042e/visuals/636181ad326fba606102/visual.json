@@ -1,0 +1,60 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "636181ad326fba606102",
+  "position": {
+    "x": 1150,
+    "y": 120,
+    "z": 1,
+    "height": 150,
+    "width": 230,
+    "tabOrder": 1
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Site"
+                    }
+                  },
+                  "Property": "Floor in use m2 estimated"
+                }
+              },
+              "queryRef": "Site.Floor in use m2 estimated",
+              "nativeQueryRef": "Floor in use m2 estimated"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true,
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Floor in use m² (estimated)'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

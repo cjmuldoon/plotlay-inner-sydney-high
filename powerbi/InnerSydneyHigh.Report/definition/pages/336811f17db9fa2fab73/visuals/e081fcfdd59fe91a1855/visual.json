@@ -1,0 +1,96 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "e081fcfdd59fe91a1855",
+  "position": {
+    "x": 40,
+    "y": 560,
+    "z": 1,
+    "height": 450,
+    "width": 1100,
+    "tabOrder": 1
+  },
+  "visual": {
+    "visualType": "clusteredBarChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Buildings"
+                    }
+                  },
+                  "Property": "key"
+                }
+              },
+              "queryRef": "Buildings.key",
+              "nativeQueryRef": "key"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Buildings"
+                    }
+                  },
+                  "Property": "Floor m2 estimated"
+                }
+              },
+              "queryRef": "Buildings.Floor m2 estimated",
+              "nativeQueryRef": "Floor m2 estimated"
+            }
+          ]
+        },
+        "Legend": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Buildings"
+                    }
+                  },
+                  "Property": "part"
+                }
+              },
+              "queryRef": "Buildings.part",
+              "nativeQueryRef": "part"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true,
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Floor m² by building (estimated)'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

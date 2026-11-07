@@ -1,0 +1,60 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "1bb6677d728542c1e339",
+  "position": {
+    "x": 1540,
+    "y": 290,
+    "z": 1,
+    "height": 150,
+    "width": 340,
+    "tabOrder": 1
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ApprovedFloorAreas"
+                    }
+                  },
+                  "Property": "Estimate over enclosed GFA"
+                }
+              },
+              "queryRef": "ApprovedFloorAreas.Estimate over enclosed GFA",
+              "nativeQueryRef": "Estimate over enclosed GFA"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true,
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Estimate over enclosed GFA'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

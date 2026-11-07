@@ -1,0 +1,78 @@
+{
+ "note": "Each picture keeps its own licence. Share-alike (CC BY-SA) pictures stay under that licence; the crops are not relicensed.",
+ "missing_years": "No openly licensed picture of the site was found for 2006, 2008, 2010, 2011, 2013 to 2019 (the whole build) or 2022 to 2025.",
+ "photos": [
+  {
+   "id": "1885",
+   "date": "c. 1880 to 1890",
+   "year": 1885,
+   "what": "Cleveland Street Public School from the street",
+   "credit": "Henry King, State Library of NSW",
+   "licence": "CC0 1.0",
+   "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "source": "https://commons.wikimedia.org/wiki/File:Cleveland_St_Public_School_ca_1880-1890.jpg",
+   "kind": "photo",
+   "file": "photos/site_1885.jpg"
+  },
+  {
+   "id": "2007",
+   "date": "28 July 2007",
+   "year": 2007,
+   "what": "Cleveland Street High School, before the new school",
+   "credit": "J Bar",
+   "licence": "CC BY 2.5",
+   "licence_url": "https://creativecommons.org/licenses/by/2.5/",
+   "source": "https://commons.wikimedia.org/wiki/File:Cleveland_Street_High_School.JPG",
+   "kind": "photo",
+   "file": "photos/site_2007.jpg"
+  },
+  {
+   "id": "2009",
+   "date": "December 2009",
+   "year": 2009,
+   "what": "The heritage buildings from Cleveland Street",
+   "credit": "Adam.J.W.C.",
+   "licence": "CC BY-SA 2.5",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/2.5/",
+   "source": "https://commons.wikimedia.org/wiki/File:Cleveland_st_boys_high_sydney.jpg",
+   "kind": "photo",
+   "file": "photos/site_2009.jpg"
+  },
+  {
+   "id": "2012",
+   "date": "7 February 2012",
+   "year": 2012,
+   "what": "The heritage buildings from the Cleveland and Chalmers corner",
+   "credit": "Maksym Kozlenko",
+   "licence": "CC BY-SA 3.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "source": "https://commons.wikimedia.org/wiki/File:Surry_Hills_NSW_2010,_Australia_-_panoramio_(8).jpg",
+   "kind": "photo",
+   "file": "photos/site_2012.jpg"
+  },
+  {
+   "id": "2020",
+   "date": "25 February 2020",
+   "year": 2020,
+   "what": "A refurbished heritage doorway, the month Year 7 started; building works at the right edge",
+   "credit": "Sardaka",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+   "source": "https://commons.wikimedia.org/wiki/File:Cleveland_Street_High_School_007.jpg",
+   "kind": "photo",
+   "file": "photos/site_2020.jpg"
+  },
+  {
+   "id": "2021",
+   "date": "22 January 2021",
+   "year": 2021,
+   "what": "From above: the tower finished, the park side still being landscaped",
+   "credit": "NSW Imagery, © Spatial Services, extracted 8 November 2026",
+   "licence": "CC BY 3.0 AU",
+   "licence_url": "https://creativecommons.org/licenses/by/3.0/au/",
+   "source": "https://maps.six.nsw.gov.au/arcgis/rest/services/public/NSW_Imagery/MapServer",
+   "kind": "aerial",
+   "file": "photos/site_2021.jpg"
+  }
+ ]
+}

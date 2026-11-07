@@ -1,0 +1,51 @@
+table FloorInUse
+	lineageTag: 2af066b8-8b36-4a5f-8fc7-6ec253dfdc61
+
+	column key
+		dataType: string
+		isHidden
+		lineageTag: 5684f7c2-2625-a26d-3e4b-a15f31910590
+		summarizeBy: none
+		sourceColumn: key
+
+		annotation SummarizationSetBy = Automatic
+
+	column year
+		dataType: int64
+		formatString: 0
+		lineageTag: 3aff90db-1473-e0cd-b87f-cf931ea6a291
+		summarizeBy: none
+		sourceColumn: year
+
+		annotation SummarizationSetBy = Automatic
+
+	column floor_in_use_m2_est
+		dataType: double
+		formatString: #,0
+		lineageTag: ef0ace66-437e-4dac-c215-5e213f8c05ce
+		summarizeBy: none
+		sourceColumn: floor_in_use_m2_est
+
+		annotation SummarizationSetBy = Automatic
+
+	column buildings_in_use
+		dataType: string
+		lineageTag: d3735ea1-7f77-b246-2c72-306317cebe81
+		summarizeBy: none
+		sourceColumn: buildings_in_use
+
+		annotation SummarizationSetBy = Automatic
+
+	partition FloorInUse = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(GetFile("site/floor_in_use.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Skipped = Table.Skip(Source, 0),
+				    Promoted = Table.PromoteHeaders(Skipped, [PromoteAllScalars = true]),
+				    Kept = Table.SelectColumns(Promoted, {"key", "year", "floor_in_use_m2_est", "buildings_in_use"}),
+				    Typed = Table.TransformColumnTypes(Kept, {{"key", type text}, {"year", Int64.Type}, {"floor_in_use_m2_est", type number}, {"buildings_in_use", type text}}, "en-AU")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table

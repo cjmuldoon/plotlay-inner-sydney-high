@@ -1,0 +1,92 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "ee7fda6b2bf02fa8ca45",
+  "position": {
+    "x": 900,
+    "y": 300,
+    "z": 1,
+    "height": 710,
+    "width": 980,
+    "tabOrder": 1
+  },
+  "visual": {
+    "visualType": "lineChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Years"
+                    }
+                  },
+                  "Property": "year"
+                }
+              },
+              "queryRef": "Years.year",
+              "nativeQueryRef": "year"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Site"
+                    }
+                  },
+                  "Property": "Floor per student estimated"
+                }
+              },
+              "queryRef": "Site.Floor per student estimated",
+              "nativeQueryRef": "Floor per student estimated"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Site"
+                    }
+                  },
+                  "Property": "Grounds per student"
+                }
+              },
+              "queryRef": "Site.Grounds per student",
+              "nativeQueryRef": "Grounds per student"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true,
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'m² per student by year: floor space (estimated) and grounds. The 2021 peak is the new building opening to two year groups'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

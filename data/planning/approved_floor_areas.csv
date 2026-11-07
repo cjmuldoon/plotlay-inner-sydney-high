@@ -1,0 +1,6 @@
+component,m2,source
+"New building, enclosed GFA",9202.6,"SSD 7610 approved plans (28 February 2018), sheet 20, GFA area schedule rev C"
+Covered outdoor terraces counted as GFA,5538.3,same
+"Heritage buildings 1 to 3, GFA",3413.1,same
+Total GFA on the schedule,18154.0,"same (the assessment report and the response to submissions give 18,153 m², rounded)"
+"Enclosed GFA (new and heritage), derived",12615.7,sum of the first and third rows

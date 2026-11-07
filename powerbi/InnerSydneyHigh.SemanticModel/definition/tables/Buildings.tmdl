@@ -1,0 +1,150 @@
+table Buildings
+	lineageTag: 9fdd5aad-7ea5-28df-6738-692b788cee0a
+
+	measure 'Buildings count' = DISTINCTCOUNT ( Buildings[key] )
+		formatString: 0
+		displayFolder: Buildings
+		lineageTag: 3ef496a4-7017-ec71-52be-c34c27d8ae7a
+
+	/// Each shape as drawn in Plotlay; the tower stands on the podium, so do not add it to the site
+	measure 'Footprint m2' = SUM ( Buildings[footprint_m2] )
+		formatString: #,0
+		displayFolder: Buildings
+		lineageTag: c0b40305-1637-e7c0-8ae0-db21a49011c9
+
+	/// Estimated: footprint times storeys, every storey over the whole footprint
+	measure 'Floor m2 estimated' = SUM ( Buildings[floor_m2_est] )
+		formatString: #,0
+		displayFolder: Buildings
+		lineageTag: 19de14cf-b67a-e852-3847-4628ba9dbe4c
+
+	/// Share of the school floor space (estimated)
+	measure 'Floor share' = DIVIDE ( [Floor m2 estimated], CALCULATE ( [Floor m2 estimated], REMOVEFILTERS ( Buildings ) ) )
+		formatString: 0.0%
+		displayFolder: Buildings
+		lineageTag: 9a4c27c7-7368-7f16-c1a3-afa6a4fc1d49
+
+	column key
+		dataType: string
+		lineageTag: 1e555345-fe10-8565-7067-a048dc11695d
+		summarizeBy: none
+		sourceColumn: key
+
+		annotation SummarizationSetBy = Automatic
+
+	column name
+		dataType: string
+		lineageTag: 022577b3-8499-dd7d-c43b-c2705208c514
+		summarizeBy: none
+		sourceColumn: name
+
+		annotation SummarizationSetBy = Automatic
+
+	column part
+		dataType: string
+		lineageTag: f946c699-68e9-e14b-b618-010a012e13f8
+		summarizeBy: none
+		sourceColumn: part
+
+		annotation SummarizationSetBy = Automatic
+
+	column storeys
+		dataType: int64
+		formatString: 0
+		lineageTag: c9f827f3-81c8-920d-0a95-15a1a3ed4f0e
+		summarizeBy: none
+		sourceColumn: storeys
+
+		annotation SummarizationSetBy = Automatic
+
+	column plates_above_street
+		dataType: int64
+		formatString: 0
+		isHidden
+		lineageTag: bb0c1aee-45eb-bcbc-2bb7-cd5bd87175aa
+		summarizeBy: none
+		sourceColumn: plates_above_street
+
+		annotation SummarizationSetBy = Automatic
+
+	column height_m
+		dataType: double
+		formatString: 0.0
+		lineageTag: 14a99c02-f680-4860-9d59-11906b4c8c62
+		summarizeBy: none
+		sourceColumn: height_m
+
+		annotation SummarizationSetBy = Automatic
+
+	column height_basis
+		dataType: string
+		lineageTag: f7c322dc-15b3-1b2a-2ec8-feb40262e5d7
+		summarizeBy: none
+		sourceColumn: height_basis
+
+		annotation SummarizationSetBy = Automatic
+
+	column levels
+		dataType: string
+		lineageTag: b89cef50-57a6-45f5-95bb-63925256f630
+		summarizeBy: none
+		sourceColumn: levels
+
+		annotation SummarizationSetBy = Automatic
+
+	column in_use_from
+		dataType: int64
+		formatString: 0
+		lineageTag: fd341327-ce24-8c20-ff3c-fe47b8ebec39
+		summarizeBy: none
+		sourceColumn: in_use_from
+
+		annotation SummarizationSetBy = Automatic
+
+	column outline_from
+		dataType: string
+		lineageTag: 42714fcc-7ba9-0a1e-dec3-0a2fd622cb93
+		summarizeBy: none
+		sourceColumn: outline_from
+
+		annotation SummarizationSetBy = Automatic
+
+	column note
+		dataType: string
+		lineageTag: f8597012-5638-03db-c280-0aad26022a28
+		summarizeBy: none
+		sourceColumn: note
+
+		annotation SummarizationSetBy = Automatic
+
+	column footprint_m2
+		dataType: double
+		formatString: #,0
+		lineageTag: e51946b1-7cd4-a500-bec8-a9b3c46296b4
+		summarizeBy: none
+		sourceColumn: footprint_m2
+
+		annotation SummarizationSetBy = Automatic
+
+	column floor_m2_est
+		dataType: double
+		formatString: #,0
+		lineageTag: 311eb2cc-1852-d327-cfdd-d6198362032c
+		summarizeBy: none
+		sourceColumn: floor_m2_est
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Buildings = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(GetFile("buildings/buildings.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Skipped = Table.Skip(Source, 0),
+				    Promoted = Table.PromoteHeaders(Skipped, [PromoteAllScalars = true]),
+				    Kept = Table.SelectColumns(Promoted, {"key", "name", "part", "storeys", "plates_above_street", "height_m", "height_basis", "levels", "in_use_from", "outline_from", "note", "footprint_m2", "floor_m2_est"}),
+				    Typed = Table.TransformColumnTypes(Kept, {{"key", type text}, {"name", type text}, {"part", type text}, {"storeys", Int64.Type}, {"plates_above_street", Int64.Type}, {"height_m", type number}, {"height_basis", type text}, {"levels", type text}, {"in_use_from", Int64.Type}, {"outline_from", type text}, {"note", type text}, {"footprint_m2", type number}, {"floor_m2_est", type number}}, "en-AU")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table

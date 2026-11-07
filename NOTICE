@@ -1,0 +1,66 @@
+Inner Sydney High, a deep dive: floor space per student, estimated.
+Copyright 2026 Craig Muldoon. Made with Plotlay (https://www.getplotlay.com).
+
+This repository contains code, data we made, data from OpenStreetMap, and pictures from the sources below.
+
+CODE
+  The notebook and the Power BI project (its Power Query, DAX and report files) are licensed under the MIT licence
+  (LICENSE).
+
+DATA WE MADE
+  data/site/, data/buildings/, data/planning/ and data/geometry/school_site.* are licensed under Creative Commons
+  Attribution 4.0 International (LICENSE-DATA). Please credit: "Plotlay (getplotlay.com), from NSW Department of
+  Education, NSW Spatial Services and OpenStreetMap data". Their sources' credits below also apply.
+
+OPENSTREETMAP (ODbL 1.0, share-alike)
+  The podium and heritage building outlines and the heritage buildings' storeys come from OpenStreetMap,
+  © OpenStreetMap contributors, available under the Open Database Licence 1.0,
+  https://opendatacommons.org/licenses/odbl/1-0/ . data/geometry/buildings.* is a derived database and is shared under
+  the ODbL 1.0. Ways used: 1178119661 (the new building at ground level), 570103244, 570103245, 570103241, 570103246
+  (the heritage buildings), retrieved 8 November 2026 through the Overpass API. Tags kept: building and building:levels.
+
+UPSTREAM SOURCES
+
+  Headcounts
+    NSW Department of Education (Centre for Education Statistics and Evaluation), data.nsw.gov.au.
+    NSW government school enrolments by head count, licensed under Creative Commons Attribution (CC BY).
+    https://data.nsw.gov.au/data/dataset/nsw-education-nsw-government-school-enrolments-by-head-count
+    Changes: school 8913 only, 2020 to 2025, one row per year.
+
+  Cadastre and aerial imagery
+    © State of New South Wales (Spatial Services, a business unit of the Department of Customer Service NSW).
+    Licensed under Creative Commons Attribution 3.0 Australia (CC BY 3.0 AU), https://creativecommons.org/licenses/by/3.0/au/
+    - NSW Cadastre: the site is the union of lots 1//DP797483, 1//DP797484 and 8//DP821649.
+    - NSW Imagery: the tower's roof outline was drawn over it (capture 22 January 2021 at the school, NSW Imagery
+      Dates); visuals/photos/site_2021.jpg and the hero map are crops of it, extracted 8 November 2026.
+
+  School Infrastructure NSW
+    Inner Sydney High School project page, information boards (December 2020) and welcome pack (January 2021).
+    © State of New South Wales (Department of Education), CC BY 4.0, https://education.nsw.gov.au/rights-and-accountability/copyright
+    Used for facts (storeys, the levels, the staged opening, the first term of the new building). No logos, photos or
+    renders are used.
+
+  NSW Planning Portal, State Significant Development SSD 7610, Inner Sydney High School
+    https://www.planningportal.nsw.gov.au/major-projects/projects/inner-sydney-high-school
+    Approved plans (28 February 2018): GFA area schedule rev C (sheet 20) and Section A rev D (sheet 30); the
+    environmental assessment report and the development consent. Figures quoted with their source; the documents are
+    not included and no licence to republish them is claimed.
+
+PICTURES (visuals/photos/), each under its own licence, cropped to 4:3 and resized only
+  - c. 1880 to 1890: Cleveland Street Public School from the street. Henry King, State Library of NSW, CC0 1.0 (https://creativecommons.org/publicdomain/zero/1.0/), https://commons.wikimedia.org/wiki/File:Cleveland_St_Public_School_ca_1880-1890.jpg
+  - 28 July 2007: Cleveland Street High School, before the new school. J Bar, CC BY 2.5 (https://creativecommons.org/licenses/by/2.5/), https://commons.wikimedia.org/wiki/File:Cleveland_Street_High_School.JPG
+  - December 2009: The heritage buildings from Cleveland Street. Adam.J.W.C., CC BY-SA 2.5 (https://creativecommons.org/licenses/by-sa/2.5/), https://commons.wikimedia.org/wiki/File:Cleveland_st_boys_high_sydney.jpg
+  - 7 February 2012: The heritage buildings from the Cleveland and Chalmers corner. Maksym Kozlenko, CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/), https://commons.wikimedia.org/wiki/File:Surry_Hills_NSW_2010,_Australia_-_panoramio_(8).jpg
+  - 25 February 2020: A refurbished heritage doorway, the month Year 7 started; building works at the right edge. Sardaka, CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/), https://commons.wikimedia.org/wiki/File:Cleveland_Street_High_School_007.jpg
+  - 22 January 2021: From above: the tower finished, the park side still being landscaped. NSW Imagery, © Spatial Services, extracted 8 November 2026, CC BY 3.0 AU (https://creativecommons.org/licenses/by/3.0/au/), https://maps.six.nsw.gov.au/arcgis/rest/services/public/NSW_Imagery/MapServer
+  The CC BY-SA pictures stay under their share-alike licences; they are not relicensed under CC BY 4.0.
+
+NOT INCLUDED
+  No Google, Nearmap, Esri, Mapbox or Street View imagery was used. No LiDAR was used. The NSW historical aerial
+  photos of 2004 and 2005 are not included (their licence is not stated). The NSW coat of arms and department logos
+  are not used, and nothing here implies endorsement by the NSW Department of Education, School Infrastructure NSW,
+  Spatial Services or the school.
+
+THIRD-PARTY SOFTWARE
+  The notebook uses pandas, GeoPandas, Shapely, pyproj and Matplotlib (installed from requirements.txt, each under its
+  own licence). Fonts in the visuals: IBM Plex Sans, IBM Plex Sans Condensed and IBM Plex Mono, SIL Open Font License 1.1.

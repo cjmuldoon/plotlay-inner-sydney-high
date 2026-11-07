@@ -1,0 +1,49 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "991e43ec45d1cd20e8ad",
+  "position": {
+    "x": 40,
+    "y": 24,
+    "z": 0,
+    "height": 80,
+    "width": 1240,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "HOW MUCH FLOOR SPACE EACH STUDENT HAS",
+                    "textStyle": {
+                      "fontSize": "24pt",
+                      "color": "#163c6e",
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Inner Sydney High School, Surry Hills: 14 storeys on a small site. Floor space estimated as footprint times storeys. Pick a year; with none picked the cards show the latest.",
+                    "textStyle": {
+                      "fontSize": "11pt",
+                      "color": "#5b6573"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

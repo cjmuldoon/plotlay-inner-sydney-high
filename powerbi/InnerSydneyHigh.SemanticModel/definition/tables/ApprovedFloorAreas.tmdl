@@ -1,0 +1,70 @@
+table ApprovedFloorAreas
+	lineageTag: 3fbdeafa-b402-49e0-9a1e-a00fd73124e5
+
+	/// Quoted from SSD 7610, GFA area schedule
+	measure 'Approved m2' = SUM ( ApprovedFloorAreas[m2] )
+		formatString: #,0
+		displayFolder: Approved
+		lineageTag: faa1d86b-b756-210a-887a-4fcdb8959f76
+
+	/// Including covered outdoor terraces
+	measure 'Approved GFA total m2' = CALCULATE ( [Approved m2], ApprovedFloorAreas[component] = "Total GFA on the schedule" )
+		formatString: #,0
+		displayFolder: Approved
+		lineageTag: be9d78bc-4a15-e6a4-0ad4-41fab8c80568
+
+	/// New building and heritage buildings, enclosed
+	measure 'Approved GFA enclosed m2' = CALCULATE ( [Approved m2], ApprovedFloorAreas[component] = "Enclosed GFA (new and heritage), derived" )
+		formatString: #,0
+		displayFolder: Approved
+		lineageTag: 91175821-840e-789f-0d08-e63aa26ad1c3
+
+	/// The estimate counts every storey over each footprint, so it is larger
+	measure 'Estimate over approved GFA' = DIVIDE ( [Floor total m2 estimated], [Approved GFA total m2] )
+		formatString: 0.00
+		displayFolder: Approved
+		lineageTag: 23e2d566-89c1-89db-7b1e-9da0b461f747
+
+	measure 'Estimate over enclosed GFA' = DIVIDE ( [Floor total m2 estimated], [Approved GFA enclosed m2] )
+		formatString: 0.00
+		displayFolder: Approved
+		lineageTag: ac3adba5-e6d0-f09b-3da1-d5c04c1820c1
+
+	column component
+		dataType: string
+		lineageTag: e718f41e-9029-6a95-b94a-6e86a40a7ade
+		summarizeBy: none
+		sourceColumn: component
+
+		annotation SummarizationSetBy = Automatic
+
+	column m2
+		dataType: double
+		formatString: #,0.0
+		lineageTag: 5d02556f-7ed5-0770-ed4d-a34654fdb134
+		summarizeBy: none
+		sourceColumn: m2
+
+		annotation SummarizationSetBy = Automatic
+
+	column source
+		dataType: string
+		lineageTag: b78be905-9367-ae61-fce6-4460f25afa05
+		summarizeBy: none
+		sourceColumn: source
+
+		annotation SummarizationSetBy = Automatic
+
+	partition ApprovedFloorAreas = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(GetFile("planning/approved_floor_areas.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Skipped = Table.Skip(Source, 0),
+				    Promoted = Table.PromoteHeaders(Skipped, [PromoteAllScalars = true]),
+				    Kept = Table.SelectColumns(Promoted, {"component", "m2", "source"}),
+				    Typed = Table.TransformColumnTypes(Kept, {{"component", type text}, {"m2", type number}, {"source", type text}}, "en-AU")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table
