@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
   "name": "7b4a8b716f5946877bbd",
   "position": {
     "x": 1180,
@@ -28,7 +28,8 @@
               },
               "queryRef": "ApprovedFloorAreas.component",
               "nativeQueryRef": "component",
-              "displayName": "Component"
+              "displayName": "Component",
+              "active": true
             }
           ]
         },
@@ -67,8 +68,7 @@
             },
             "direction": "Descending"
           }
-        ],
-        "isDefaultSort": false
+        ]
       }
     },
     "drillFilterOtherVisuals": true,
