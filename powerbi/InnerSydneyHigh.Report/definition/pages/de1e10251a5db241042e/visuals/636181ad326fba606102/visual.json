@@ -27,7 +27,8 @@
                 }
               },
               "queryRef": "Site.Floor in use m2 estimated",
-              "nativeQueryRef": "Floor in use m2 estimated"
+              "nativeQueryRef": "Floor in use m2 estimated",
+              "displayName": "Floor in use (m², est.)"
             }
           ]
         }
@@ -49,6 +50,28 @@
               "expr": {
                 "Literal": {
                   "Value": "'Floor in use m² (estimated)'"
+                }
+              }
+            },
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "objects": {
+      "categoryLabels": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }

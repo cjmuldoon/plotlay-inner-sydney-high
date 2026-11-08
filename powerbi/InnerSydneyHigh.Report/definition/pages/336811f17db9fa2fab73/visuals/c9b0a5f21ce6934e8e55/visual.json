@@ -27,7 +27,8 @@
                 }
               },
               "queryRef": "Buildings.key",
-              "nativeQueryRef": "key"
+              "nativeQueryRef": "key",
+              "displayName": "Building"
             },
             {
               "field": {
@@ -41,7 +42,8 @@
                 }
               },
               "queryRef": "Buildings.name",
-              "nativeQueryRef": "name"
+              "nativeQueryRef": "name",
+              "displayName": "Name"
             },
             {
               "field": {
@@ -55,7 +57,8 @@
                 }
               },
               "queryRef": "Buildings.storeys",
-              "nativeQueryRef": "storeys"
+              "nativeQueryRef": "storeys",
+              "displayName": "Storeys"
             },
             {
               "field": {
@@ -69,7 +72,8 @@
                 }
               },
               "queryRef": "Buildings.footprint_m2",
-              "nativeQueryRef": "footprint_m2"
+              "nativeQueryRef": "footprint_m2",
+              "displayName": "Footprint (m²)"
             },
             {
               "field": {
@@ -83,7 +87,8 @@
                 }
               },
               "queryRef": "Buildings.floor_m2_est",
-              "nativeQueryRef": "floor_m2_est"
+              "nativeQueryRef": "floor_m2_est",
+              "displayName": "Floor (m², est.)"
             },
             {
               "field": {
@@ -97,7 +102,8 @@
                 }
               },
               "queryRef": "Buildings.Floor share",
-              "nativeQueryRef": "Floor share"
+              "nativeQueryRef": "Floor share",
+              "displayName": "Share of floor"
             },
             {
               "field": {
@@ -111,7 +117,8 @@
                 }
               },
               "queryRef": "Buildings.in_use_from",
-              "nativeQueryRef": "in_use_from"
+              "nativeQueryRef": "in_use_from",
+              "displayName": "In use from"
             },
             {
               "field": {
@@ -125,7 +132,8 @@
                 }
               },
               "queryRef": "Buildings.height_m",
-              "nativeQueryRef": "height_m"
+              "nativeQueryRef": "height_m",
+              "displayName": "Height (m)"
             },
             {
               "field": {
@@ -139,10 +147,29 @@
                 }
               },
               "queryRef": "Buildings.outline_from",
-              "nativeQueryRef": "outline_from"
+              "nativeQueryRef": "outline_from",
+              "displayName": "Outline from"
             }
           ]
         }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Buildings"
+                  }
+                },
+                "Property": "floor_m2_est"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": false
       }
     },
     "drillFilterOtherVisuals": true,
@@ -161,6 +188,169 @@
               "expr": {
                 "Literal": {
                   "Value": "'Each building'"
+                }
+              }
+            },
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "objects": {
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "94.6D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Buildings.key"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "216.3D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Buildings.name"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "85.8D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Buildings.storeys"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "103.3D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Buildings.footprint_m2"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "82.1D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Buildings.floor_m2_est"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "82.1D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Buildings.Floor share"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "65.6D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Buildings.in_use_from"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "81.5D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Buildings.height_m"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "254.7D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Buildings.outline_from"
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {
+            "wordWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "values": [
+        {
+          "properties": {
+            "wordWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }

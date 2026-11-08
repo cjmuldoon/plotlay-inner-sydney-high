@@ -27,7 +27,8 @@
                 }
               },
               "queryRef": "Site.Grounds per student",
-              "nativeQueryRef": "Grounds per student"
+              "nativeQueryRef": "Grounds per student",
+              "displayName": "Grounds m² per student"
             }
           ]
         }
@@ -49,6 +50,28 @@
               "expr": {
                 "Literal": {
                   "Value": "'Grounds m² per student'"
+                }
+              }
+            },
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "objects": {
+      "categoryLabels": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }

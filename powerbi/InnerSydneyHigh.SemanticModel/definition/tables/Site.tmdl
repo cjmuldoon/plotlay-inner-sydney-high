@@ -31,15 +31,15 @@ table Site
 		displayFolder: Site
 		lineageTag: d493f01f-1fe3-6171-d36a-2de9138ba046
 
-	/// The year picked; the latest when none is picked
-	measure 'Selected year' = MAX ( Years[year] )
+	/// The year the per-year measures use: the year picked, the latest when none is
+	measure 'Year shown' = MAX ( Years[year] )
 		formatString: 0
 		displayFolder: Per year
-		lineageTag: feb121e2-838e-5a8e-df86-00ee1bef4df4
+		lineageTag: b72f732c-3c29-ad44-275a-c0b8a276ff96
 
 	/// NSW Department of Education headcount, the school as a whole
 	measure Students =
-			VAR y = MAX ( Years[year] )
+			VAR y = [Year shown]
 			RETURN CALCULATE ( SUM ( Enrolments[students] ), Years[year] = y )
 		formatString: #,0
 		displayFolder: Per year
@@ -47,7 +47,7 @@ table Site
 
 	/// Estimated floor space of the buildings in use that year (heritage from 2020, new building from 2021)
 	measure 'Floor in use m2 estimated' =
-			VAR y = MAX ( Years[year] )
+			VAR y = [Year shown]
 			RETURN CALCULATE ( SUM ( Buildings[floor_m2_est] ), REMOVEFILTERS ( Buildings ), Buildings[in_use_from] <= y )
 		formatString: #,0
 		displayFolder: Per year
@@ -55,7 +55,7 @@ table Site
 
 	/// The same figure from site/floor_in_use.csv, as a check
 	measure 'Floor in use m2 plan table' =
-			VAR y = MAX ( Years[year] )
+			VAR y = [Year shown]
 			RETURN CALCULATE ( SUM ( FloorInUse[floor_in_use_m2_est] ), Years[year] = y )
 		formatString: #,0
 		displayFolder: Per year
@@ -63,13 +63,13 @@ table Site
 
 	/// Site level: floor in use (estimated) over the year headcount
 	measure 'Floor per student estimated' = DIVIDE ( [Floor in use m2 estimated], [Students] )
-		formatString: 0.0
+		formatString: #,0.0
 		displayFolder: Per year
 		lineageTag: a6e2d093-223e-b31e-1066-dfa1b0a45638
 
 	/// Site level: the grounds over the year headcount
 	measure 'Grounds per student' = DIVIDE ( [Grounds m2], [Students] )
-		formatString: 0.0
+		formatString: #,0.0
 		displayFolder: Per year
 		lineageTag: 9ee86f92-d5c1-f02f-b478-e392ce2f0b92
 

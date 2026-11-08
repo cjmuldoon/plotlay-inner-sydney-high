@@ -27,7 +27,8 @@
                 }
               },
               "queryRef": "Site.Floor per student estimated",
-              "nativeQueryRef": "Floor per student estimated"
+              "nativeQueryRef": "Floor per student estimated",
+              "displayName": "Floor m² per student (est.)"
             }
           ]
         }
@@ -49,6 +50,28 @@
               "expr": {
                 "Literal": {
                   "Value": "'Floor m² per student (estimated)'"
+                }
+              }
+            },
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "objects": {
+      "categoryLabels": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }

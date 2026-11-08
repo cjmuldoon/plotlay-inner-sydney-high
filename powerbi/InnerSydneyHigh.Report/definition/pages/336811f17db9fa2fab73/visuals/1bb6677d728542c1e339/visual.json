@@ -27,7 +27,8 @@
                 }
               },
               "queryRef": "ApprovedFloorAreas.Estimate over enclosed GFA",
-              "nativeQueryRef": "Estimate over enclosed GFA"
+              "nativeQueryRef": "Estimate over enclosed GFA",
+              "displayName": "Estimate over enclosed GFA"
             }
           ]
         }
@@ -49,6 +50,28 @@
               "expr": {
                 "Literal": {
                   "Value": "'Estimate over enclosed GFA'"
+                }
+              }
+            },
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "objects": {
+      "categoryLabels": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }
