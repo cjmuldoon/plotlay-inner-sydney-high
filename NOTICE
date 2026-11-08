@@ -55,6 +55,12 @@ PICTURES (visuals/photos/), each under its own licence, cropped to 4:3 and resiz
   - 22 January 2021: From above: the tower finished, the park side still being landscaped. NSW Imagery, © Spatial Services, extracted 8 November 2026, CC BY 3.0 AU (https://creativecommons.org/licenses/by/3.0/au/), https://maps.six.nsw.gov.au/arcgis/rest/services/public/NSW_Imagery/MapServer
   The CC BY-SA pictures stay under their share-alike licences; they are not relicensed under CC BY 4.0.
 
+POWER BI MAP CONTEXT
+  The Shape Map in powerbi/ draws context round the buildings: NSW Cadastre lots (DCS Spatial Services, CC BY 3.0 AU)
+  and suburb boundaries (Australian Bureau of Statistics, ASGS Edition 3, Suburbs and Localities 2021, CC BY 4.0),
+  cut to the map frame, and the school site outline from data/geometry/school_site.geojson.
+
+
 NOT INCLUDED
   No Google, Nearmap, Esri, Mapbox or Street View imagery was used. No LiDAR was used. The NSW historical aerial
   photos of 2004 and 2005 are not included (their licence is not stated). The NSW coat of arms and department logos

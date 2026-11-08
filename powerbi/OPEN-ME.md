@@ -29,10 +29,10 @@
 
 ## The map
 
-- **Shape Map** (Overview page). The custom map, `data/geometry/buildings.topojson`, is saved inside the report (`InnerSydneyHigh.Report/StaticResources/RegisteredResources/buildings.topojson`, a copy that keeps only the building key), so the six buildings draw on open, coloured by part. The tower T is the last shape in the file, so it draws over the podium P.
+- **Shape Map** (Overview page). The custom map, `data/geometry/buildings.topojson`, is saved inside the report (`InnerSydneyHigh.Report/StaticResources/RegisteredResources/buildings.topojson`, a copy that keeps only the building key), so the six buildings draw on open, coloured by part. The tower T is the last shape in the file, so it draws over the podium P. The Shape Map has no base map of its own, so the file also carries the context, drawn underneath in a pale ground tone: the NSW Cadastre lots round the school (the gaps between them are the streets, with Cleveland Street along the south side), the suburb boundaries (ABS) and the school site as a thin outline. Loading the plain file from `data/` by hand (below) gives the buildings without that context.
 - If the map shows the United States instead (an older Desktop can ignore a saved map): select it, then **Format visual** (the paintbrush), **Visual**, **Map settings**, **Map type: Custom map**, **Add map type** (or **Browse**), and choose `..\data\geometry\buildings.topojson`. Under **View map keys** the keys P, T and H1 to H4 should match. Projection: Mercator. If the Shape Map is not in the Visualizations pane, turn it on in **File, Options and settings, Options, Preview features, Shape map visual** and restart Desktop.
 - If the Shape Map comes up empty after opening, drag the fields back: Location `Buildings[key]`, Legend `Buildings[part]`.
-- Optional, **Azure Maps**: add a reference layer from `..\data\geometry\buildings.geojson`, join property `key`, map style **Grayscale (light)** or **Blank**. Do not publish satellite basemap screenshots.
+- Optional, if you add an **Azure Maps** visual (for real streets under the buildings): add a reference layer from `..\data\geometry\buildings.geojson`, join property `key`, map style **Grayscale (light)** or **Blank**. Do not publish satellite basemap screenshots.
 
 ## Save a .pbix too
 
