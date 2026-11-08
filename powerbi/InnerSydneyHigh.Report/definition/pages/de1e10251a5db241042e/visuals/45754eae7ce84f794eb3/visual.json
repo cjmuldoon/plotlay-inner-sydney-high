@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "45754eae7ce84f794eb3",
   "position": {
-    "x": 1552,
-    "y": 20,
+    "x": 1552.7402135231316,
+    "y": 13.665480427046262,
     "z": 1,
-    "height": 72,
-    "width": 328,
+    "height": 92.241992882562272,
+    "width": 327.97153024911029,
     "tabOrder": 1
   },
   "visual": {
@@ -28,28 +28,12 @@
               },
               "queryRef": "Years.year",
               "nativeQueryRef": "year",
-              "displayName": "Year",
-              "active": true
+              "active": true,
+              "displayName": "Year"
             }
           ]
         }
       }
-    },
-    "drillFilterOtherVisuals": true,
-    "visualContainerObjects": {
-      "title": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          }
-        }
-      ]
     },
     "objects": {
       "data": [
@@ -165,6 +149,40 @@
           }
         }
       ]
-    }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "cdfd9650d5d0774dd0d5",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Years"
+              }
+            },
+            "Property": "year"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }
