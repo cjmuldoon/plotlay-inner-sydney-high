@@ -3,9 +3,9 @@
   "name": "0d16e43b9b216022e7d0",
   "position": {
     "x": 40,
-    "y": 1025,
+    "y": 1020,
     "z": 99,
-    "height": 53,
+    "height": 58,
     "width": 1840,
     "tabOrder": 99
   },
@@ -21,7 +21,7 @@
                   {
                     "value": "Site: NSW Cadastre (DCS Spatial Services), CC BY 3.0 AU. Podium and heritage outlines: © OpenStreetMap contributors, ODbL 1.0. Tower outline drawn over NSW Imagery (DCS Spatial Services), CC BY 3.0 AU. Headcounts: NSW Department of Education, CC BY. Approved floor areas quoted from SSD 7610 (NSW Planning Portal). Map context: NSW Cadastre lots, ABS ASGS 2021 suburbs (CC BY 4.0). Shapes made in Plotlay (getplotlay.com). Floor space is an estimate: footprint times storeys.",
                     "textStyle": {
-                      "fontSize": "8pt",
+                      "fontSize": "9pt",
                       "color": "#5b6573",
                       "fontFamily": "Segoe UI"
                     }
