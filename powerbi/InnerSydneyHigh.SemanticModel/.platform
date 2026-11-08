@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "InnerSydneyHigh"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "23a6b889-451c-473d-b9a4-fccf91cc1165"
+  }
+}

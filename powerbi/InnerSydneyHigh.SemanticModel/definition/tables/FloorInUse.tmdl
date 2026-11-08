@@ -49,3 +49,4 @@ table FloorInUse
 				    Typed
 
 	annotation PBI_ResultType = Table
+

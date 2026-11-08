@@ -68,3 +68,4 @@ table ApprovedFloorAreas
 				    Typed
 
 	annotation PBI_ResultType = Table
+
