@@ -59,8 +59,8 @@ table Buildings
 
 	column plates_above_street
 		dataType: int64
-		isHidden
 		formatString: 0
+		isHidden
 		lineageTag: bb0c1aee-45eb-bcbc-2bb7-cd5bd87175aa
 		summarizeBy: none
 		sourceColumn: plates_above_street
@@ -148,4 +148,3 @@ table Buildings
 				    Typed
 
 	annotation PBI_ResultType = Table
-

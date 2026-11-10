@@ -55,6 +55,14 @@ table ApprovedFloorAreas
 
 		annotation SummarizationSetBy = Automatic
 
+	column component_short
+		dataType: string
+		lineageTag: bdfd9b9f-b72f-1f07-f674-7877a8ce08b3
+		summarizeBy: none
+		sourceColumn: component_short
+
+		annotation SummarizationSetBy = Automatic
+
 	partition ApprovedFloorAreas = m
 		mode: import
 		source =
@@ -63,9 +71,10 @@ table ApprovedFloorAreas
 				    Skipped = Table.Skip(Source, 0),
 				    Promoted = Table.PromoteHeaders(Skipped, [PromoteAllScalars = true]),
 				    Kept = Table.SelectColumns(Promoted, {"component", "m2", "source"}),
-				    Typed = Table.TransformColumnTypes(Kept, {{"component", type text}, {"m2", type number}, {"source", type text}}, "en-AU")
+				    Typed = Table.TransformColumnTypes(Kept, {{"component", type text}, {"m2", type number}, {"source", type text}}, "en-AU"),
+				    ShortNames_component_short = [#"Covered outdoor terraces counted as GFA" = "Covered terraces (GFA)", #"Enclosed GFA (new and heritage), derived" = "Enclosed GFA, all (derived)", #"Heritage buildings 1 to 3, GFA" = "Heritage 1 to 3"],
+				    Short_component_short = Table.AddColumn(Typed, "component_short", each Record.FieldOrDefault(ShortNames_component_short, [component], [component]), type text)
 				in
-				    Typed
+				    Short_component_short
 
 	annotation PBI_ResultType = Table
-

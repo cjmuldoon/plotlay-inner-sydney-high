@@ -24,4 +24,3 @@ table Years
 				    Distinct
 
 	annotation PBI_ResultType = Table
-

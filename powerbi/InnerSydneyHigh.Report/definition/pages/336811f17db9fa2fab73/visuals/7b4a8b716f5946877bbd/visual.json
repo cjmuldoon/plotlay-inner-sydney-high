@@ -23,11 +23,11 @@
                       "Entity": "ApprovedFloorAreas"
                     }
                   },
-                  "Property": "component"
+                  "Property": "component_short"
                 }
               },
-              "queryRef": "ApprovedFloorAreas.component",
-              "nativeQueryRef": "component",
+              "queryRef": "ApprovedFloorAreas.component_short",
+              "nativeQueryRef": "component_short",
               "displayName": "Component",
               "active": true
             }
@@ -118,6 +118,13 @@
                   "Value": "true"
                 }
               }
+            },
+            "axisType": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Categorical'"
+                }
+              }
             }
           }
         }
@@ -149,5 +156,11 @@
         }
       ]
     }
-  }
+  },
+  "annotations": [
+    {
+      "name": "plotlay.categoryLabels",
+      "value": "[\"Covered terraces (GFA)\", \"Enclosed GFA, all (derived)\", \"Heritage 1 to 3\"]"
+    }
+  ]
 }
